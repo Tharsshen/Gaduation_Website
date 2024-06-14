@@ -33,7 +33,7 @@ header p {
     display: flex;
     justify-content: center;
     align-items: flex-end; /* Aligns the video container to the bottom */
-    height: 600px;
+    height: 900px;
     width: 98%;
     margin: 20px auto; /* Center the video container horizontally */
     margin-top: 90px; /* Add margin-top to lower the container */
