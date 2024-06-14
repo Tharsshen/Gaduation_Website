@@ -33,10 +33,12 @@ header p {
     display: flex;
     justify-content: center;
     align-items: flex-end; /* Aligns the video container to the bottom */
-    margin: 20px auto; /* Adjusted margins */
     height: 600px;
     width: 98%;
-    margin-top: 40px; /* Add margin-top to lower the container */
+    margin: 20px auto; /* Center the video container horizontally */
+    margin-top: 90px; /* Add margin-top to lower the container */
+    transform: translateX(40px); /* Move the container to the left by 20px */
+    /* transform: translateX(20px);  Move the container to the right by 20px */
 }
 
 
