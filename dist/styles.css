@@ -61,7 +61,7 @@ section .container {
 }
 
 h2 {
-    color: orange;
+    color: red;
     text-align: center;
     margin-bottom: 20px;
 }
