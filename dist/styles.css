@@ -32,11 +32,13 @@ header p {
 .video-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    align-items: flex-end; /* Aligns the video container to the bottom */
+    margin: 20px auto; /* Adjusted margins */
     height: 600px;
     width: 98%;
-    margin: auto; /* Center the video container horizontally */
+    margin-top: 40px; /* Add margin-top to lower the container */
 }
+
 
 .video-container video {
     width: 100%;
