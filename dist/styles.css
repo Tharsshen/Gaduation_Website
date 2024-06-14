@@ -29,16 +29,20 @@ header p {
     font-size: 1.2em;
 }
 
-.degree-pic-container {
+.video-container {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    height: 600px;
+    width: 98%;
+    margin: auto; /* Center the video container horizontally */
 }
 
-.degree-pic-container img {
-    max-width: 100%;
-    height: auto;
+.video-container video {
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
+    object-fit: cover; /* Ensure the video covers the entire container */
 }
 
 section {
@@ -121,8 +125,6 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
-
-
 
 .card {
     background-color: #f8f8f8;
@@ -272,9 +274,8 @@ footer {
     min-width: 100%;
     height: 100%; /* Set the height of each slide to 100% of the slider height */
     transition: opacity 0.5s ease-in-out;
-    object-fit: cover; /* Ensure images cover the entire slide */position: opacity 0.5s ease-in-out;
+    object-fit: cover; /* Ensure images cover the entire slide */
 }
-
 
 .prev, .next {
     position: absolute;
@@ -340,10 +341,10 @@ footer {
     /* Added black outline */
     border: 10px solid black;
 }
+
 .play-btn:hover {
     background-color: darkred;
 }
-
 
 .play-text {
     font-family: Arial, sans-serif;
