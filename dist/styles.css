@@ -500,6 +500,12 @@ footer {
 
 /* Specific Media Queries for Galaxy S9 */
 @media only screen and (min-device-width: 360px) and (max-device-width: 412px) and (-webkit-min-device-pixel-ratio: 3) {
+    .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
+        padding: 0 2px;
+    }
+
     .video-container video {
         margin-left: 0; /* Reset margin */
     }
@@ -573,7 +579,7 @@ footer {
         height: 50px;
         font-size: 20px;
         line-height: 50px;
-        top: 120px; /* Adjust position */
+        top: 200px; /* Adjust position */
     }
 }
 
