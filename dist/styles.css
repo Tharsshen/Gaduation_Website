@@ -585,6 +585,13 @@ footer {
 
 /* Media Query for Tablets in Horizontal Orientation */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
+        padding: 0 2px;
+    }
+
     .play-btn {
         top: 120px; /* Adjusted 30px up from the original 150px */
     }
@@ -592,6 +599,13 @@ footer {
 
 /* Media Query for Tablets in Vertical Orientation */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+    .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
+        padding: 0 2px;
+    }
+    
     .play-btn {
         top: 70px; /* Adjusted 80px up from the original 150px */
     }
