@@ -1,4 +1,4 @@
-/* styles.css */
+/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,6 +7,7 @@ body {
     background-color: #1a1a1a;
 }
 
+/* Header */
 header {
     background-color: orange;
     color: black;
@@ -29,26 +30,25 @@ header p {
     font-size: 1.2em;
 }
 
+/* Video Container */
 .video-container {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Aligns the video container to the bottom */
+    align-items: flex-end;
     height: 1000px;
     width: 98%;
-    margin: 20px auto; /* Center the video container horizontally */
-    margin-top: 30px; /* Add margin-top to lower the container */
-    transform: translateX(-3px); /* Move the container to the left by 20px */
-    /* transform: translateX(-20px);  Move the container to the right by 20px */
+    margin: 30px auto 20px;
+    transform: translateX(-3px);
 }
-
 
 .video-container video {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    object-fit: fit; /* Ensure the video covers the entire container */
+    object-fit: cover;
 }
 
+/* Sections */
 section {
     padding: 50px 20px;
     margin: 20px 0;
@@ -74,6 +74,7 @@ h2 {
     background-color: #444;
 }
 
+/* Gallery Section */
 #gallery .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -85,6 +86,7 @@ h2 {
     border-radius: 8px;
 }
 
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
@@ -116,6 +118,7 @@ button:hover {
     background-color: darkorange;
 }
 
+/* Testimonial */
 .testimonial {
     background-color: #555;
     padding: 20px;
@@ -123,6 +126,7 @@ button:hover {
     margin: 10px 0;
 }
 
+/* Footer */
 footer {
     background-color: #222;
     color: #ccc;
@@ -130,6 +134,7 @@ footer {
     padding: 20px 0;
 }
 
+/* Card Styles */
 .card {
     background-color: #f8f8f8;
     border-radius: 5px;
@@ -172,7 +177,7 @@ footer {
     color: black;
 }
 
-/* Gift Card Styles */
+/* Gift Card */
 .gift-card {
     background-color: #444;
     padding: 20px;
@@ -214,7 +219,7 @@ footer {
     transform: scale(1.1);
 }
 
-/* Popup Styles */
+/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -260,13 +265,14 @@ footer {
     color: #333;
 }
 
+/* Slider */
 .slider {
     position: relative;
     max-width: 800px;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    height: 500px; /* Increase the height of the slider */
+    height: 500px;
 }
 
 .slides {
@@ -276,9 +282,9 @@ footer {
 
 .slide {
     min-width: 100%;
-    height: 100%; /* Set the height of each slide to 100% of the slider height */
+    height: 100%;
     transition: opacity 0.5s ease-in-out;
-    object-fit: cover; /* Ensure images cover the entire slide */
+    object-fit: cover;
 }
 
 .prev, .next {
@@ -305,23 +311,24 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Interactive Game */
 #interactive-game {
     background-image: url('Pics/game background.png');
     background-size: auto 97.5%;
     background-position: center;
-    height: 600px; /* Increase the height of the game section */
-    width: 98%; /* Increase the width of the game section */
-    margin: auto; /* Center the game section horizontally */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    height: 600px;
+    width: 98%;
+    margin: auto;
+    background-repeat: no-repeat;
 }
 
 #game-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%; /* Adjust the height of the game container to fit within the game section */
-    width: 100%; /* Increase the width of the game container */
-    margin: auto; /* Center the game container within the game section */
+    height: 80%;
+    width: 100%;
+    margin: auto;
 }
 
 .play-btn {
@@ -333,16 +340,12 @@ footer {
     border-radius: 40px;
     font-size: 60px;
     text-align: center;
-    line-height: 100px; /* Vertically center the text */
-    text-decoration: none; /* Remove underline from link */
-    
-    /* New positioning */
+    line-height: 100px;
+    text-decoration: none;
     position: absolute;
     right: 50%;
     transform: translateX(50%);
-    bottom: 100px; /* Changed from 20px to 40px */
-    
-    /* Added black outline */
+    bottom: 100px;
     border: 10px solid black;
 }
 
