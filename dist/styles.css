@@ -314,21 +314,20 @@ footer {
 /* Interactive Game */
 #interactive-game {
     background-image: url('Pics/game background.png');
-    background-size: auto 97.5%;
+    background-size: cover;
     background-position: center;
     height: 600px;
-    width: 98%;
-    margin: auto;
-    background-repeat: no-repeat;
+    margin: 20px 0; /* Same margin as other sections */
+    border-radius: 8px;
 }
 
-#game-container {
+#interactive-game .container {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    width: 100%;
-    margin: auto;
+    height: 100%;
 }
 
 .play-btn {
@@ -342,10 +341,8 @@ footer {
     text-align: center;
     line-height: 100px;
     text-decoration: none;
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 100px;
+    position: relative;
+    bottom: 40px;
     border: 10px solid black;
 }
 
