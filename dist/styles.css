@@ -45,7 +45,7 @@ header p {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-    margin-left: -10px; /* Move the video to the left by 10px */
+    margin-left: -40px; /* Move the video to the left by 10px */
 }
 
 /* Sections */
