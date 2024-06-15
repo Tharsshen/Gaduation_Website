@@ -1,0 +1,204 @@
+/* styles-mobile.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+header p {
+    font-size: 1em;
+}
+
+/* Video container styles */
+.video-container {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Section styles */
+section {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+section h2 {
+    text-align: center;
+}
+
+/* Gift card styles */
+.gift-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-card-content {
+    text-align: center;
+}
+
+.gift-card-content .icon {
+    width: 60px;
+    height: auto;
+}
+
+.gift-card-content .gift-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.gift-card-content #congrats-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.gift-card-content #congrats-btn:hover {
+    background-color: #45a049;
+}
+
+/* Gallery styles */
+.slider {
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.slides::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 12px;
+    margin-top: -18px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Testimonials styles */
+.testimonial {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-left: 6px solid #4CAF50;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+/* Invitation styles */
+#invitation-form {
+    text-align: center;
+}
+
+#invitation-form label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+#invitation-form input[type=text] {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#invitation-form button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#invitation-form button[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.8em;
+    margin: 0;
+}
