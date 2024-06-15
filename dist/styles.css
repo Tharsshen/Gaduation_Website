@@ -558,3 +558,17 @@ footer {
         line-height: 50px;
     }
 }
+
+/* Media Query for Tablets in Horizontal Orientation */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .play-btn {
+        top: 120px; /* Adjusted 30px up from the original 150px */
+    }
+}
+
+/* Media Query for Tablets in Vertical Orientation */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .play-btn {
+        top: 70px; /* Adjusted 80px up from the original 150px */
+    }
+}
