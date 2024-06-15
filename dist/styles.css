@@ -525,7 +525,7 @@ footer {
 
     .video-container {
         width: calc(100% - 4px); /* Ensure container does not exceed 100% */
-        margin: 0 auto; /* Center align */
+        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
         padding: 0 2px;
     }
 
