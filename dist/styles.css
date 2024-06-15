@@ -32,6 +32,7 @@ header p {
     font-size: 1.2em;
 }
 
+/* Video Container */
 .video-container {
     display: flex;
     justify-content: center;
@@ -363,4 +364,120 @@ footer {
 
 .vt323-regular {
     font-family: "VT323", monospace;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .video-container {
+        padding: 0 10px;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    form {
+        max-width: 300px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .play-btn {
+        width: 250px;
+        height: 80px;
+        font-size: 50px;
+        line-height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .video-container {
+        padding: 0 5px;
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px 5px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    form {
+        max-width: 250px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+    }
+
+    .play-btn {
+        width: 200px;
+        height: 70px;
+        font-size: 40px;
+        line-height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.8em;
+    }
+
+    .video-container {
+        padding: 0 2px;
+        margin: 10px auto;
+    }
+
+    section {
+        padding: 10px 2px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    form {
+        max-width: 200px;
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .play-btn {
+        width: 150px;
+        height: 60px;
+        font-size: 30px;
+        line-height: 60px;
+    }
 }
