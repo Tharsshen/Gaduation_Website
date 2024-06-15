@@ -539,6 +539,15 @@ footer {
 
     #gallery .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-auto-rows: 100px; /* Set the height of each grid item */
+        gap: 5px; /* Adjust gap between grid items */
+    }
+
+    #gallery img {
+        width: 100%; /* Ensure images take full width of their parent */
+        height: 100%; /* Ensure images take full height of their parent */
+        object-fit: cover; /* Maintain aspect ratio and cover the area */
+        border-radius: 8px; /* Optional: Add border radius */
     }
 
     form {
