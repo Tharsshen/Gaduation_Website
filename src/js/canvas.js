@@ -404,13 +404,14 @@ function animate() {
 
     // hat collection detection
     if (
-        player.position.y + player.height <= hatObject.position.y &&
-        player.position.y + player.height + player.velocity.y >= hatObject.position.y &&
-        player.position.x + player.width >= hatObject.position.x &&
-        player.position.x <= hatObject.position.x + hatObject.width
+        player.position.y + player.height >= hatObject.position.y &&
+        player.position.y <= hatObject.position.y + hatObject.height &&
+        player.position.x + player.width >= hatObject.position.x - scrollOffset &&
+        player.position.x <= hatObject.position.x + hatObject.width - scrollOffset
     ) {
         // collect the hat
         hatObject.collected = true;
+        console.log('Hat collected!');
     }
 
     // win condition
@@ -423,7 +424,6 @@ function animate() {
         init();
     }
 }
-
 init();
 animate();
 
