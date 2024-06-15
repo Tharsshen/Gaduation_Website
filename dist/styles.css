@@ -32,12 +32,11 @@ header p {
     font-size: 1.2em;
 }
 
-/* Video Container */
 .video-container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 100%;
+    width: calc(100% - 20px); /* Adjusting width to compensate for padding */
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -46,6 +45,7 @@ header p {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
+    margin-left: -10px; /* Move the video to the left by 10px */
 }
 
 /* Sections */
