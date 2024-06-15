@@ -458,12 +458,23 @@ function animate() {
 
     // Check for win condition
     if (
+<<<<<<< HEAD
         !hatObject.collected &&
         player.position.x + scrollOffset >= hatObject.position.x &&
         player.position.x + scrollOffset <= hatObject.position.x + hatObject.width
+=======
+        player.position.y + player.height >= hatObject.position.y &&
+        player.position.y <= hatObject.position.y + hatObject.height &&
+        player.position.x + player.width >= hatObject.position.x - scrollOffset &&
+        player.position.x <= hatObject.position.x + hatObject.width - scrollOffset
+>>>>>>> 0058902b876d0a5a73bb5ee292a883f450470c75
     ) {
         hatObject.collected = true;
+<<<<<<< HEAD
         location.replace("win.html");
+=======
+        console.log('Hat collected!');
+>>>>>>> 0058902b876d0a5a73bb5ee292a883f450470c75
     }
 
     // Lose Condition
@@ -471,6 +482,7 @@ function animate() {
         init();
     }
 }
+<<<<<<< HEAD
 
 // Function to display the win screen
 function showWinScreen() {
@@ -512,6 +524,9 @@ canvas.addEventListener('click', function(event) {
 });
 
 // Start the animation loop
+=======
+init();
+>>>>>>> 0058902b876d0a5a73bb5ee292a883f450470c75
 animate();
 
 addEventListener('keydown', ({ keyCode }) => {
