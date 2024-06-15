@@ -1,3 +1,14 @@
+import platform from '../img/platform.png';
+import hills from '../img/hills.png';
+import background from '../img/background.png';
+import platformSmallTall from '../img/platformSmallTall.png';
+
+import spriteRunLeft from '../img/spriteRunLeft.png';
+import spriteRunRight from '../img/spriteRunRight.png';
+import spriteStandLeft from '../img/spriteStandLeft.png';
+import spriteStandRight from '../img/spriteStandRight.png';
+import hat from '../img/hat.png';
+
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
@@ -348,82 +359,8 @@ function init() {
             x: platformImage.width * 27 + 1100 - 2,
             y: 470,
             image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 28 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 29 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 30 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 31 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 32 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 33 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 34 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 35 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 36 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 37 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 38 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 39 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 40 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 41 + 1100 - 2,
-            y: 470,
-            image: platformImage
-        }),
-        new Platform({
-            x: platformImage.width * 42 + 1100 - 2,
-            y: 470,
-            image: platformImage
         })
+       
     ];
 
     genericObjects = [
@@ -450,21 +387,52 @@ function animate() {
     genericObjects.forEach(genericObject => {
         genericObject.draw();
     });
-
     platforms.forEach(platform => {
         platform.draw();
     });
+    hatObject.draw();
 
-    hatObject.draw(); // Draw the hat
+    drawHomeButton();
+
+    // Sprite Switching
+    if (keys.right.pressed && currentKey === 'right' && player.currentSprite !== player.sprites.run.right) {
+        player.frames = 1;
+        player.currentSprite = player.sprites.run.right;
+        player.currentCropWidth = player.sprites.run.cropWidth;
+        player.width = player.sprites.run.width;
+    } else if (keys.left.pressed && currentKey === 'left' && player.currentSprite !== player.sprites.run.left) {
+        player.frames = 1;
+        player.currentSprite = player.sprites.run.left;
+        player.currentCropWidth = player.sprites.run.cropWidth;
+        player.width = player.sprites.run.width;
+    } else if (!keys.right.pressed && !keys.left.pressed && player.currentSprite === player.sprites.run.right) {
+        player.frames = 1;
+        player.currentSprite = player.sprites.stand.right;
+        player.currentCropWidth = player.sprites.stand.cropWidth;
+        player.width = player.sprites.stand.width;
+    } else if (!keys.right.pressed && !keys.left.pressed && player.currentSprite === player.sprites.run.left) {
+        player.frames = 1;
+        player.currentSprite = player.sprites.stand.left;
+        player.currentCropWidth = player.sprites.stand.cropWidth;
+        player.width = player.sprites.stand.width;
+    }
+
+    // Hat collection check
+    if (!hatObject.collected &&
+        player.position.x < hatObject.position.x + hatObject.width &&
+        player.position.x + player.width > hatObject.position.x &&
+        player.position.y < hatObject.position.y + hatObject.height &&
+        player.position.y + player.height > hatObject.position.y) {
+        hatObject.collected = true;
+        showWinScreen();
+        console.log('Hat collected!');
+    }
 
     player.update();
 
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = player.speed;
-    } else if (
-        (keys.left.pressed && player.position.x > 100) ||
-        (keys.left.pressed && scrollOffset === 0 && player.position.x > 0)
-    ) {
+    } else if (keys.left.pressed && player.position.x > 50) {
         player.velocity.x = -player.speed;
     } else {
         player.velocity.x = 0;
@@ -474,7 +442,6 @@ function animate() {
             platforms.forEach(platform => {
                 platform.position.x -= player.speed;
             });
-
             genericObjects.forEach(genericObject => {
                 genericObject.position.x -= player.speed * 0.66;
             });
@@ -483,107 +450,113 @@ function animate() {
             platforms.forEach(platform => {
                 platform.position.x += player.speed;
             });
-
             genericObjects.forEach(genericObject => {
                 genericObject.position.x += player.speed * 0.66;
             });
         }
     }
 
-    // win condition
-    if (scrollOffset > platformImage.width * 5 + 300 - 2) {
-        console.log('you win');
-    }
-
-    // lose condition
-    if (player.position.y > canvas.height) {
-        console.log('you lose');
-        init();
-    }
-
-    // Hat collision detection
+    // Check for win condition
     if (
         !hatObject.collected &&
-        player.position.x < hatObject.position.x + hatObject.width &&
-        player.position.x + player.width > hatObject.position.x &&
-        player.position.y < hatObject.position.y + hatObject.height &&
-        player.position.y + player.height > hatObject.position.y
+        player.position.x + scrollOffset >= hatObject.position.x &&
+        player.position.x + scrollOffset <= hatObject.position.x + hatObject.width
     ) {
         hatObject.collected = true;
-        console.log('Hat collected!');
+        location.replace("win.html");
+    }
+
+    // Lose Condition
+    if (player.position.y > canvas.height) {
+        init();
     }
 }
 
-// Handle touch events for mobile controls
-function handleTouchStart(event) {
-    event.preventDefault();
-    const touch = event.touches[0];
-    const touchX = touch.clientX;
-    const touchY = touch.clientY;
+// Function to display the win screen
+function showWinScreen() {
+    const winScreen = document.getElementById('winScreen');
+    winScreen.style.display = 'block';
+}
 
-    if (touchX < canvas.width / 3) {
-        // Touching the left side
-        keys.left.pressed = true;
-        keys.right.pressed = false;
-    } else if (touchX > (2 * canvas.width) / 3) {
-        // Touching the right side
-        keys.right.pressed = true;
-        keys.left.pressed = false;
-    } else {
-        // Touching the middle
-        player.velocity.y = -20; // Jump
+
+
+
+function drawHomeButton() {
+    // Draw transparent yellow circle
+    c.save();
+    c.globalAlpha = 0.3; // Set transparency level
+    c.fillStyle = 'yellow';
+    c.beginPath();
+    c.arc(50, 50, 30, 0, Math.PI * 2);
+    c.fill();
+    c.closePath();
+    c.restore();
+
+    // Draw text inside the circle
+    c.fillStyle = 'black';
+    c.font = 'bold 20px Arial';
+    c.textAlign = 'center';
+    c.fillText('Home', 50, 55);
+}
+
+// Event listener to handle clicks on Home button
+canvas.addEventListener('click', function(event) {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+
+    // Check if click is inside the home button circle
+    if (Math.sqrt((mouseX - 50) ** 2 + (mouseY - 50) ** 2) <= 30) {
+        window.location.href = 'graduation.html';
     }
-}
+});
 
-function handleTouchEnd(event) {
-    event.preventDefault();
-    keys.left.pressed = false;
-    keys.right.pressed = false;
-}
-
-// Add touch event listeners
-canvas.addEventListener('touchstart', handleTouchStart);
-canvas.addEventListener('touchend', handleTouchEnd);
-
-init();
+// Start the animation loop
 animate();
 
 addEventListener('keydown', ({ keyCode }) => {
     switch (keyCode) {
-        case 65:
+        case 65: // 'A' key
+            console.log('left');
             keys.left.pressed = true;
+            currentKey = 'left';
             break;
 
-        case 83:
-            console.log('down');
-            break;
-
-        case 68:
+        case 68: // 'D' key
+            console.log('right');
             keys.right.pressed = true;
+            currentKey = 'right';
             break;
 
-        case 87:
-            player.velocity.y -= 20;
+        case 87: // 'W' key
+            console.log('up');
+            player.velocity.y -= 25; // Adjust jump velocity for better control
             break;
     }
 });
 
 addEventListener('keyup', ({ keyCode }) => {
     switch (keyCode) {
-        case 65:
+        case 65: // 'A' key
+            console.log('left');
             keys.left.pressed = false;
+            player.currentSprite = player.sprites.stand.left;
+            player.currentCropWidth = player.sprites.stand.cropWidth;
+            player.width = player.sprites.stand.width;
             break;
 
-        case 83:
-            console.log('down');
-            break;
-
-        case 68:
+        case 68: // 'D' key
+            console.log('right');
             keys.right.pressed = false;
+            player.currentSprite = player.sprites.stand.right;
+            player.currentCropWidth = player.sprites.stand.cropWidth;
+            player.width = player.sprites.stand.width;
             break;
 
-        case 87:
+        case 87: // 'W' key
             console.log('up');
             break;
     }
 });
+
+
