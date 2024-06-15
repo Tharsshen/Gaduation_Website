@@ -45,7 +45,7 @@ header p {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-    margin-left: -40px; /* Move the video to the left by 10px */
+    margin-left: -22px; /* Move the video to the left by 10px */
 }
 
 /* Sections */
@@ -344,7 +344,8 @@ footer {
     line-height: 100px;
     text-decoration: none;
     position: relative;
-    bottom: 40px;
+    top: 150px;
+    left: -10px; /* Move the button 10px to the left */
     border: 10px solid black;
 }
 
