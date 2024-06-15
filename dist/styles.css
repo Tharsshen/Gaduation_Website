@@ -377,6 +377,8 @@ footer {
     }
 
     .video-container {
+        width: 100vw; /* Full width of the viewport */
+        margin: 0 -20px; /* Negative margin to stick to the left side */
         padding: 0 10px;
     }
 
@@ -491,5 +493,65 @@ footer {
         height: 60px;
         font-size: 30px;
         line-height: 60px;
+    }
+}
+
+/* Specific Media Queries for Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 412px) and (-webkit-min-device-pixel-ratio: 3) {
+    .video-container video {
+        margin-left: 20px; /* Move the video 20px to the right */
+    }
+
+    .play-btn {
+        width: 150px;
+        height: 50px;
+        font-size: 25px;
+        line-height: 50px;
+        left: -10px; /* Adjust left position */
+    }
+}
+
+/* Specific Media Queries for phones */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header p {
+        font-size: 0.7em;
+    }
+
+    .video-container {
+        padding: 0 2px;
+        margin: 10px auto;
+    }
+
+    .video-container video {
+        margin-left: 20px; /* Move the video 20px to the right */
+    }
+
+    section {
+        padding: 5px 2px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    form {
+        max-width: 180px;
+    }
+
+    .card {
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .play-btn {
+        width: 120px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
     }
 }
