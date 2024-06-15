@@ -537,7 +537,7 @@ footer {
         padding: 5px 2px;
     }
 
-    .gallery-grid {
+    #gallery .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
 
@@ -551,11 +551,20 @@ footer {
         font-size: 14px;
     }
 
+    #interactive-game {
+        background-size: 100%; /* Adjust background size to cover full width */
+    }
+
+    #interactive-game .container {
+        padding: 0 10px; /* Adjust padding */
+    }
+
     .play-btn {
-        width: 120px;
+        width: 150px;
         height: 50px;
         font-size: 20px;
         line-height: 50px;
+        top: 120px; /* Adjust position */
     }
 }
 
