@@ -37,7 +37,7 @@ header p {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: calc(100% - 20px); /* Adjusting width to compensate for padding */
+    width: calc(100% - 40px); /* Adjusting width to compensate for padding */
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -46,7 +46,7 @@ header p {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-    margin-left: -22px; /* Move the video to the left by 10px */
+    margin: 0; /* Remove margin */
 }
 
 /* Sections */
@@ -325,7 +325,7 @@ footer {
 }
 
 #interactive-game .container {
-    max-width: 1200px;
+    max-width: 100%; /* Ensure container does not exceed 100% */
     margin: auto;
     padding: 0 20px;
     display: flex;
@@ -377,13 +377,13 @@ footer {
     }
 
     .video-container {
-        width: 100vw; /* Full width of the viewport */
-        margin: 0 -20px; /* Negative margin to stick to the left side */
+        width: calc(100% - 40px); /* Ensure container does not exceed 100% */
+        margin: 0 auto; /* Center align */
         padding: 0 10px;
     }
 
     .video-container video {
-        margin-left: 20px; /* Move the video 20px to the right */
+        margin-left: 0; /* Reset margin */
     }
 
     section {
@@ -418,12 +418,13 @@ footer {
     }
 
     .video-container {
+        width: calc(100% - 20px); /* Ensure container does not exceed 100% */
+        margin: 0 auto; /* Center align */
         padding: 0 5px;
-        margin: 20px auto;
     }
 
     .video-container video {
-        margin-left: 20px; /* Move the video 20px to the right */
+        margin-left: 0; /* Reset margin */
     }
 
     section {
@@ -462,12 +463,13 @@ footer {
     }
 
     .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 0 auto; /* Center align */
         padding: 0 2px;
-        margin: 10px auto;
     }
 
     .video-container video {
-        margin-left: 20px; /* Move the video 20px to the right */
+        margin-left: 0; /* Reset margin */
     }
 
     section {
@@ -499,7 +501,7 @@ footer {
 /* Specific Media Queries for Galaxy S9 */
 @media only screen and (min-device-width: 360px) and (max-device-width: 412px) and (-webkit-min-device-pixel-ratio: 3) {
     .video-container video {
-        margin-left: 20px; /* Move the video 20px to the right */
+        margin-left: 0; /* Reset margin */
     }
 
     .play-btn {
@@ -522,12 +524,13 @@ footer {
     }
 
     .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 0 auto; /* Center align */
         padding: 0 2px;
-        margin: 10px auto;
     }
 
     .video-container video {
-        margin-left: 20px; /* Move the video 20px to the right */
+        margin-left: 0; /* Reset margin */
     }
 
     section {
