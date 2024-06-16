@@ -336,19 +336,19 @@ footer {
 
 .play-btn {
     display: block;
-    width: 300px;
-    height: 100px;
+    width: 100px; /* Adjust width */
+    height: 30px; /* Adjust height */
     background-color: red;
     color: black;
-    border-radius: 40px;
-    font-size: 60px;
+    border-radius: 20px; /* Adjust border radius */
+    font-size: 14px; /* Adjust font size */
     text-align: center;
-    line-height: 100px;
+    line-height: 30px; /* Adjust line height */
     text-decoration: none;
     position: relative;
-    top: 200px; /* Move the button further upwards */
+    top: 50px; /* Move the button further upwards */
     left: -10px; /* Adjust the horizontal position */
-    border: 10px solid black;
+    border: 5px solid black; /* Adjust border thickness */
 }
 
 .play-btn:hover {
@@ -378,7 +378,7 @@ footer {
 
     .video-container {
         width: calc(100% - 40px); /* Ensure container does not exceed 100% */
-        margin: 0 auto; /* Center
+        margin: 0 auto; /* Center */
         padding: 0 10px;
     }
 
@@ -387,6 +387,7 @@ footer {
     }
 
     section {
+        padding
         padding: 30px 10px;
     }
 
@@ -423,12 +424,12 @@ footer {
     }
 
     .play-btn {
-        width: 200px;
-        height: 70px;
-        font-size: 30px;
-        line-height: 70px;
-        top: 100px; /* Adjust position */
-        left: 0; /* Center align */
+        width: 80px; /* Adjust width */
+        height: 20px; /* Adjust height */
+        font-size: 12px; /* Adjust font size */
+        line-height: 20px; /* Adjust line height */
+        top: 30px; /* Adjust the vertical position */
+        left: -5px; /* Adjust the horizontal position */
     }
 
     /* Slider adjustments for phones */
@@ -478,10 +479,10 @@ footer {
     }
 
     .play-btn {
-        width: 180px; /* Further reduce play button width */
-        height: 60px; /* Further reduce play button height */
-        font-size: 24px; /* Further reduce play button font size */
-        line-height: 60px; /* Adjust line height accordingly */
-        top: 80px; /* Adjust play button position */
+        width: 60px; /* Further reduce play button width */
+        height: 16px; /* Further reduce play button height */
+        font-size: 10px; /* Further reduce play button font size */
+        line-height: 16px; /* Adjust line height accordingly */
+        top: 20px; /* Adjust play button position */
     }
 }
