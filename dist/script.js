@@ -124,7 +124,7 @@ document.getElementById('invitation-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-    const message = `Hi ${name}, you are invited to Yogendran Govikrishnan's graduation ceremony!`;
+    const message = `Hi ${name}, you are invited to Yogendran Govikrishnan's graduation ceremony! https://tharsshen.github.io/Gaduation_Website/dist/graduation.html`;
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
