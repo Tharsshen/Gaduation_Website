@@ -584,6 +584,27 @@ addEventListener('keyup', ({ keyCode }) => {
     }
 });
 
+
+function isMobileOrTablet() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Only create touch controls if the device is mobile or tablet
+if (isMobileOrTablet()) {
+    const leftControl = createTouchControl('left-control', 'Left');
+    const rightControl = createTouchControl('right-control', 'Right');
+    const jumpControl = createTouchControl('jump-control', 'Jump');
+
+    // Position the controls
+    leftControl.style.bottom = '20px';
+    leftControl.style.left = '20px';
+    rightControl.style.bottom = '20px';
+    rightControl.style.left = '120px';
+    jumpControl.style.bottom = '120px';
+    jumpControl.style.left = '70px';
+
+}
+
 // Add touch controls for mobile devices
 function createTouchControl(id, direction) {
     const control = document.createElement('div');
@@ -605,9 +626,9 @@ function createTouchControl(id, direction) {
     return control;
 }
 
-const leftControl = createTouchControl('left-control');
-const rightControl = createTouchControl('right-control');
-const jumpControl = createTouchControl('jump-control');
+const leftControl = createTouchControl('left-control', '←');
+const rightControl = createTouchControl('right-control', '→');
+const jumpControl = createTouchControl('jump-control', '↑');
 
 // Position the controls
 leftControl.style.bottom = '20px';
