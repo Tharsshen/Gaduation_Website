@@ -605,9 +605,9 @@ function createTouchControl(id, direction) {
     return control;
 }
 
-const leftControl = createTouchControl('left-control', '←');
-const rightControl = createTouchControl('right-control', '→');
-const jumpControl = createTouchControl('jump-control', '↑');
+const leftControl = createTouchControl('left-control');
+const rightControl = createTouchControl('right-control');
+const jumpControl = createTouchControl('jump-control');
 
 // Position the controls
 leftControl.style.bottom = '20px';
