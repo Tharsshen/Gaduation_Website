@@ -456,6 +456,7 @@ footer {
 
     #interactive-game {
         background-size: 100%; /* Adjust background size to cover full width */
+        height: 400px; /* Adjust height for mobile devices */
     }
 
     #interactive-game .container {
@@ -467,7 +468,8 @@ footer {
         height: 50px;
         font-size: 20px;
         line-height: 50px;
-        top: 200px; /* Adjust position */
+        top: 150px; /* Adjust position */
+        left: 0; /* Center align */
     }
 
     /* Slider adjustments for phones */
