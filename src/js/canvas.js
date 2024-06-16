@@ -1,12 +1,12 @@
-import platform from '../img/platform.png';
+import platform from '../img/platformnew.png';
 import hills from '../img/hills.png';
-import background from '../img/background.png';
-import platformSmallTall from '../img/platformSmallTall.png';
+import background from '../img/backgroundbrown.png';
+import platformSmallTall from '../img/smalltallnew.png';
 
 import spriteRunLeft from '../img/spriteRunLeft.png';
 import spriteRunRight from '../img/spriteRunRight.png';
-import spriteStandLeft from '../img/spriteStandLeft.png';
-import spriteStandRight from '../img/spriteStandRight.png';
+import spriteStandLeft from '../img/yogenspritestandleft.png';
+import spriteStandRight from '../img/yogenspritestandright.png';
 import hat from '../img/hat.png';
 
 const canvas = document.querySelector('canvas');
