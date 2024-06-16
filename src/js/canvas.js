@@ -539,50 +539,7 @@ canvas.addEventListener('click', function(event) {
 // Start the animation loop
 animate();
 
-addEventListener('keydown', ({ keyCode }) => {
-    switch (keyCode) {
-        case 65: // 'A' key
-            console.log('left');
-            keys.left.pressed = true;
-            currentKey = 'left';
-            break;
 
-        case 68: // 'D' key
-            console.log('right');
-            keys.right.pressed = true;
-            currentKey = 'right';
-            break;
-
-        case 87: // 'W' key
-            console.log('up');
-            player.velocity.y -= 25; // Adjust jump velocity for better control
-            break;
-    }
-});
-
-addEventListener('keyup', ({ keyCode }) => {
-    switch (keyCode) {
-        case 65: // 'A' key
-            console.log('left');
-            keys.left.pressed = false;
-            player.currentSprite = player.sprites.stand.left;
-            player.currentCropWidth = player.sprites.stand.cropWidth;
-            player.width = player.sprites.stand.width;
-            break;
-
-        case 68: // 'D' key
-            console.log('right');
-            keys.right.pressed = false;
-            player.currentSprite = player.sprites.stand.right;
-            player.currentCropWidth = player.sprites.stand.cropWidth;
-            player.width = player.sprites.stand.width;
-            break;
-
-        case 87: // 'W' key
-            console.log('up');
-            break;
-    }
-});
 
 
 function isMobileOrTablet() {
@@ -603,6 +560,51 @@ if (isMobileOrTablet()) {
     jumpControl.style.bottom = '120px';
     jumpControl.style.left = '70px';
 
+}else{
+    addEventListener('keydown', ({ keyCode }) => {
+        switch (keyCode) {
+            case 65: // 'A' key
+                console.log('left');
+                keys.left.pressed = true;
+                currentKey = 'left';
+                break;
+    
+            case 68: // 'D' key
+                console.log('right');
+                keys.right.pressed = true;
+                currentKey = 'right';
+                break;
+    
+            case 87: // 'W' key
+                console.log('up');
+                player.velocity.y -= 25; // Adjust jump velocity for better control
+                break;
+        }
+    });
+    
+    addEventListener('keyup', ({ keyCode }) => {
+        switch (keyCode) {
+            case 65: // 'A' key
+                console.log('left');
+                keys.left.pressed = false;
+                player.currentSprite = player.sprites.stand.left;
+                player.currentCropWidth = player.sprites.stand.cropWidth;
+                player.width = player.sprites.stand.width;
+                break;
+    
+            case 68: // 'D' key
+                console.log('right');
+                keys.right.pressed = false;
+                player.currentSprite = player.sprites.stand.right;
+                player.currentCropWidth = player.sprites.stand.cropWidth;
+                player.width = player.sprites.stand.width;
+                break;
+    
+            case 87: // 'W' key
+                console.log('up');
+                break;
+        }
+    });
 }
 
 // Add touch controls for mobile devices
