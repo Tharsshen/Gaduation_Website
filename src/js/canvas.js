@@ -614,8 +614,8 @@ leftControl.style.bottom = '20px';
 leftControl.style.left = '20px';
 rightControl.style.bottom = '20px';
 rightControl.style.left = '120px';
-jumpControl.style.bottom = '120px';
-jumpControl.style.left = '70px';
+jumpControl.style.bottom = '20px';
+jumpControl.style.right = '20px';  // Adjusted to be on the bottom right
 
 // Add touch event listeners
 leftControl.addEventListener('touchstart', () => {
@@ -647,5 +647,5 @@ rightControl.addEventListener('touchend', () => {
 });
 
 jumpControl.addEventListener('touchstart', () => {
-    player.velocity.y -= 25;
+    player.velocity.y -= 25;
 });
