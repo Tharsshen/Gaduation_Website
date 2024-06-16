@@ -539,75 +539,52 @@ canvas.addEventListener('click', function(event) {
 // Start the animation loop
 animate();
 
+addEventListener('keydown', ({ keyCode }) => {
+    switch (keyCode) {
+        case 65: // 'A' key
+            console.log('left');
+            keys.left.pressed = true;
+            currentKey = 'left';
+            break;
+
+        case 68: // 'D' key
+            console.log('right');
+            keys.right.pressed = true;
+            currentKey = 'right';
+            break;
+
+        case 87: // 'W' key
+            console.log('up');
+            player.velocity.y -= 25; // Adjust jump velocity for better control
+            break;
+    }
+});
+
+addEventListener('keyup', ({ keyCode }) => {
+    switch (keyCode) {
+        case 65: // 'A' key
+            console.log('left');
+            keys.left.pressed = false;
+            player.currentSprite = player.sprites.stand.left;
+            player.currentCropWidth = player.sprites.stand.cropWidth;
+            player.width = player.sprites.stand.width;
+            break;
+
+        case 68: // 'D' key
+            console.log('right');
+            keys.right.pressed = false;
+            player.currentSprite = player.sprites.stand.right;
+            player.currentCropWidth = player.sprites.stand.cropWidth;
+            player.width = player.sprites.stand.width;
+            break;
+
+        case 87: // 'W' key
+            console.log('up');
+            break;
+    }
+});
 
 
-
-function isMobileOrTablet() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Only create touch controls if the device is mobile or tablet
-if (isMobileOrTablet()) {
-    const leftControl = createTouchControl('left-control', 'Left');
-    const rightControl = createTouchControl('right-control', 'Right');
-    const jumpControl = createTouchControl('jump-control', 'Jump');
-
-    // Position the controls
-    leftControl.style.bottom = '20px';
-    leftControl.style.left = '20px';
-    rightControl.style.bottom = '20px';
-    rightControl.style.left = '120px';
-    jumpControl.style.bottom = '120px';
-    jumpControl.style.left = '70px';
-
-}else{
-    addEventListener('keydown', ({ keyCode }) => {
-        switch (keyCode) {
-            case 65: // 'A' key
-                console.log('left');
-                keys.left.pressed = true;
-                currentKey = 'left';
-                break;
-    
-            case 68: // 'D' key
-                console.log('right');
-                keys.right.pressed = true;
-                currentKey = 'right';
-                break;
-    
-            case 87: // 'W' key
-                console.log('up');
-                player.velocity.y -= 25; // Adjust jump velocity for better control
-                break;
-        }
-    });
-    
-    addEventListener('keyup', ({ keyCode }) => {
-        switch (keyCode) {
-            case 65: // 'A' key
-                console.log('left');
-                keys.left.pressed = false;
-                player.currentSprite = player.sprites.stand.left;
-                player.currentCropWidth = player.sprites.stand.cropWidth;
-                player.width = player.sprites.stand.width;
-                break;
-    
-            case 68: // 'D' key
-                console.log('right');
-                keys.right.pressed = false;
-                player.currentSprite = player.sprites.stand.right;
-                player.currentCropWidth = player.sprites.stand.cropWidth;
-                player.width = player.sprites.stand.width;
-                break;
-    
-            case 87: // 'W' key
-                console.log('up');
-                break;
-        }
-    });
-}
-
-// Add touch controls for mobile devices
 function createTouchControl(id, direction) {
     const control = document.createElement('div');
     control.id = id;
@@ -615,7 +592,7 @@ function createTouchControl(id, direction) {
     control.style.width = '80px';
     control.style.height = '80px';
     control.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    control.style.borderRadius = '50%';
+    control.style.borderRadius = '50%';  // Makes it circular
     control.style.zIndex = '10';
     control.style.touchAction = 'none';
     control.style.display = 'flex';
