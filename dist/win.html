@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: 20px;
+        }
+        .container img {
+            max-width: 100%;
+            height: auto;
+        }
+        #winScreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            padding-top: 20%;
+        }
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px; /* Increase the space between the circles */
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Gallery</h2>
+        <img src="Pics/family pic.jpg" alt="Family Picture">
+        <div class="circle-container">
+            <a href="graduation.html" class="circle">Home</a>
+            <a href="index.html" class="circle">Game</a>
+        </div>
+    </div>
+    <div id="winScreen">
+        <p>Congratulations! You collected the hat!</p>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="main.js"></script>
+</body>
+</html>
