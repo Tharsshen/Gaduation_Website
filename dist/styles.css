@@ -316,7 +316,7 @@ footer {
 /* Interactive Game */
 #interactive-game {
     background-image: url('Pics/game background.png');
-    background-size: 80%; /* Shrink the background image to 80% of its original size */
+    background-size: cover; /* Ensure the background image covers the section */
     background-position: center;
     background-repeat: no-repeat; /* Prevent background image from repeating */
     height: 600px;
@@ -346,8 +346,8 @@ footer {
     line-height: 100px;
     text-decoration: none;
     position: relative;
-    top: 150px;
-    left: -10px; /* Move the button 10px to the left */
+    top: 200px; /* Move the button further upwards */
+    left: -10px; /* Adjust the horizontal position */
     border: 10px solid black;
 }
 
@@ -378,7 +378,7 @@ footer {
 
     .video-container {
         width: calc(100% - 40px); /* Ensure container does not exceed 100% */
-        margin: 0 auto; /* Center align */
+        margin: 0 auto; /* Center
         padding: 0 10px;
     }
 
@@ -388,47 +388,6 @@ footer {
 
     section {
         padding: 30px 10px;
-    }
-
-    form {
-        max-width: 300px;
-    }
-
-    .card {
-        width: 70px;
-        height: 70px;
-        font-size: 16px;
-    }
-
-    .play-btn {
-        width: 200px;
-        height: 70px;
-        font-size: 30px;
-        line-height: 70px;
-    }
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.2em;
-    }
-
-    header p {
-        font-size: 0.7em;
-    }
-
-    .video-container {
-        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
-        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
-        padding: 0 2px;
-    }
-
-    .video-container video {
-        margin-left: 0; /* Reset margin */
-    }
-
-    section {
-        padding: 5px 2px;
     }
 
     #gallery .gallery-grid {
@@ -464,10 +423,10 @@ footer {
     }
 
     .play-btn {
-        width: 100px;
-        height: 40px;
-        font-size: 18px;
-        line-height: 40px;
+        width: 200px;
+        height: 70px;
+        font-size: 30px;
+        line-height: 70px;
         top: 100px; /* Adjust position */
         left: 0; /* Center align */
     }
@@ -485,5 +444,44 @@ footer {
     .slide {
         height: 100%; /* Ensure slide takes full height of the slider */
         object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    }
+}
+
+/* Additional styles for very small screens (e.g., less than 400px) */
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.5em; /* Further reduce font size */
+    }
+
+    header p {
+        font-size: 0.8em; /* Further reduce font size */
+    }
+
+    .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
+        padding: 0 2px;
+    }
+
+    section {
+        padding: 20px 2px; /* Further reduce padding */
+    }
+
+    form {
+        max-width: 160px; /* Further reduce form width */
+    }
+
+    .card {
+        width: 40px; /* Further reduce card size */
+        height: 40px; /* Further reduce card size */
+        font-size: 12px; /* Further reduce font size */
+    }
+
+    .play-btn {
+        width: 180px; /* Further reduce play button width */
+        height: 60px; /* Further reduce play button height */
+        font-size: 24px; /* Further reduce play button font size */
+        line-height: 60px; /* Adjust line height accordingly */
+        top: 80px; /* Adjust play button position */
     }
 }
