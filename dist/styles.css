@@ -456,7 +456,7 @@ footer {
 
     #interactive-game {
         background-size: 100%; /* Adjust background size to cover full width */
-        height: 400px; /* Adjust height for mobile devices */
+        height: 300px; /* Adjust height for mobile devices */
     }
 
     #interactive-game .container {
@@ -464,11 +464,11 @@ footer {
     }
 
     .play-btn {
-        width: 150px;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        top: 150px; /* Adjust position */
+        width: 100px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+        top: 100px; /* Adjust position */
         left: 0; /* Center align */
     }
 
