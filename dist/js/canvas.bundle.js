@@ -112,16 +112,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/img/hills.png":
-/*!***************************!*\
-  !*** ./src/img/hills.png ***!
-  \***************************/
+/***/ "./src/img/hillsnew.png":
+/*!******************************!*\
+  !*** ./src/img/hillsnew.png ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "cfffe4c371f5e11d372b398a87c51dd0.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9fd18a569cc3e581e020de445b91d09a.png");
 
 /***/ }),
 
@@ -213,7 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _img_platformnew_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/platformnew.png */ "./src/img/platformnew.png");
-/* harmony import */ var _img_hills_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/hills.png */ "./src/img/hills.png");
+/* harmony import */ var _img_hillsnew_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/hillsnew.png */ "./src/img/hillsnew.png");
 /* harmony import */ var _img_backgroundbrown_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/backgroundbrown.png */ "./src/img/backgroundbrown.png");
 /* harmony import */ var _img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/smalltallnew.png */ "./src/img/smalltallnew.png");
 /* harmony import */ var _img_spriteRunLeft_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/spriteRunLeft.png */ "./src/img/spriteRunLeft.png");
@@ -443,6 +443,46 @@ function init() {
     y: 270,
     image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
   }), new Platform({
+    x: platformImage.width * 8.8 + 300 - 18 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 8.8 + 500 - 18 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 8.8 + 900 - 18 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 14 + 900 - 385 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 14 + 1100 - 385 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 16 + 1300 - 2 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 16 + 1500 - 2 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 16 + 1900 - 2 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 19 + 1680 - 2 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
+    x: platformImage.width * 19 + 1980 - 2 + platformImage.width - platformSmallTallImage.width,
+    y: 270,
+    image: createImage(_img_smalltallnew_png__WEBPACK_IMPORTED_MODULE_3__["default"])
+  }), new Platform({
     x: -1,
     y: 470,
     image: platformImage
@@ -467,10 +507,6 @@ function init() {
     y: 470,
     image: platformImage
   }), new Platform({
-    x: platformImage.width * 4 + 750 - 2,
-    y: 470,
-    image: platformImage
-  }), new Platform({
     x: platformImage.width * 5 + 750 - 2,
     y: 470,
     image: platformImage
@@ -487,11 +523,7 @@ function init() {
     y: 470,
     image: platformImage
   }), new Platform({
-    x: platformImage.width * 9 + 750 - 2,
-    y: 470,
-    image: platformImage
-  }), new Platform({
-    x: platformImage.width * 10 + 750 - 2,
+    x: platformImage.width * +750 - 2,
     y: 470,
     image: platformImage
   }), new Platform({
@@ -511,10 +543,6 @@ function init() {
     y: 470,
     image: platformImage
   }), new Platform({
-    x: platformImage.width * 14 + 1100 - 2,
-    y: 470,
-    image: platformImage
-  }), new Platform({
     x: platformImage.width * 15 + 1100 - 2,
     y: 470,
     image: platformImage
@@ -523,23 +551,11 @@ function init() {
     y: 470,
     image: platformImage
   }), new Platform({
-    x: platformImage.width * 17 + 1100 - 2,
-    y: 470,
-    image: platformImage
-  }), new Platform({
-    x: platformImage.width * 18 + 1100 - 2,
-    y: 470,
-    image: platformImage
-  }), new Platform({
     x: platformImage.width * 19 + 1100 - 2,
     y: 470,
     image: platformImage
   }), new Platform({
     x: platformImage.width * 20 + 1100 - 2,
-    y: 470,
-    image: platformImage
-  }), new Platform({
-    x: platformImage.width * 21 + 1100 - 2,
     y: 470,
     image: platformImage
   }), new Platform({
@@ -574,7 +590,7 @@ function init() {
   }), new GenericObject({
     x: -1,
     y: -1,
-    image: createImage(_img_hills_png__WEBPACK_IMPORTED_MODULE_1__["default"])
+    image: createImage(_img_hillsnew_png__WEBPACK_IMPORTED_MODULE_1__["default"])
   })];
   scrollOffset = 0;
 }

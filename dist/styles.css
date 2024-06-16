@@ -395,131 +395,19 @@ footer {
     }
 
     .card {
-        width: 80px;
-        height: 80px;
-        font-size: 20px;
-    }
-
-    .play-btn {
-        width: 250px;
-        height: 80px;
-        font-size: 50px;
-        line-height: 80px;
-    }
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header p {
-        font-size: 0.9em;
-    }
-
-    .video-container {
-        width: calc(100% - 20px); /* Ensure container does not exceed 100% */
-        margin: 0 auto; /* Center align */
-        padding: 0 5px;
-    }
-
-    .video-container video {
-        margin-left: 0; /* Reset margin */
-    }
-
-    section {
-        padding: 20px 5px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    form {
-        max-width: 250px;
-    }
-
-    .card {
         width: 70px;
         height: 70px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .play-btn {
         width: 200px;
         height: 70px;
-        font-size: 40px;
+        font-size: 30px;
         line-height: 70px;
     }
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-
-    header p {
-        font-size: 0.8em;
-    }
-
-    .video-container {
-        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
-        margin: 0 auto; /* Center align */
-        padding: 0 2px;
-    }
-
-    .video-container video {
-        margin-left: 0; /* Reset margin */
-    }
-
-    section {
-        padding: 10px 2px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-
-    form {
-        max-width: 200px;
-    }
-
-    .card {
-        width: 60px;
-        height: 60px;
-        font-size: 16px;
-    }
-
-    .play-btn {
-        width: 150px;
-        height: 60px;
-        font-size: 30px;
-        line-height: 60px;
-    }
-}
-
-/* Specific Media Queries for Galaxy S9 */
-@media only screen and (min-device-width: 360px) and (max-device-width: 412px) and (-webkit-min-device-pixel-ratio: 3) {
-    .video-container {
-        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
-        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
-        padding: 0 2px;
-    }
-
-    .video-container video {
-        margin-left: 0; /* Reset margin */
-    }
-
-    .play-btn {
-        width: 150px;
-        height: 50px;
-        font-size: 25px;
-        line-height: 50px;
-        left: -10px; /* Adjust left position */
-    }
-}
-
-/* Specific Media Queries for phones */
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.2em;
@@ -581,32 +469,19 @@ footer {
         line-height: 50px;
         top: 200px; /* Adjust position */
     }
-}
 
-/* Media Query for Tablets in Horizontal Orientation */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-    .video-container {
-        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
-        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
-        padding: 0 2px;
+    /* Slider adjustments for phones */
+    .slider {
+        max-width: 100%; /* Ensure slider does not exceed 100% */
+        height: 300px; /* Decrease the height to make it more like a tabloid shape */
     }
 
-    .play-btn {
-        top: 120px; /* Adjusted 30px up from the original 150px */
+    .slides {
+        height: 300px; /* Adjust the height to match the slider */
     }
-}
 
-/* Media Query for Tablets in Vertical Orientation */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-
-    .video-container {
-        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
-        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
-        padding: 0 2px;
-    }
-    
-    .play-btn {
-        top: 70px; /* Adjusted 80px up from the original 150px */
+    .slide {
+        height: 100%; /* Ensure slide takes full height of the slider */
+        object-fit: cover; /* Cover the area while maintaining aspect ratio */
     }
 }
