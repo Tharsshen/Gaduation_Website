@@ -319,7 +319,7 @@ footer {
     background-size: 80%; /* Shrink the background image to 80% of its original size */
     background-position: center;
     background-repeat: no-repeat; /* Prevent background image from repeating */
-    height: 400px;
+    height: 600px;
     margin: 20px 0;
     border-radius: 8px;
 }
@@ -571,7 +571,7 @@ footer {
         background-size: 80%; /* Shrink the background image to 80% of its original size */
         background-position: center;
         background-repeat: no-repeat; /* Prevent background image from repeating */
-        height: 600px;
+        height: 400px;
         margin: 0; /* Remove default margin */
         padding: 0; /* Remove default padding */
         border-radius: 8px;
