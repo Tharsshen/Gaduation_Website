@@ -383,11 +383,11 @@ footer {
     }
 
     .video-container video {
-        margin-left: 0; /* Reset margin */
+        margin-left: 0; /* Reset
+        margin: 0; /* Remove margin */
     }
 
     section {
-        padding
         padding: 30px 10px;
     }
 
@@ -479,10 +479,11 @@ footer {
     }
 
     .play-btn {
-        width: 60px; /* Further reduce play button width */
-        height: 16px; /* Further reduce play button height */
-        font-size: 10px; /* Further reduce play button font size */
-        line-height: 16px; /* Adjust line height accordingly */
-        top: 20px; /* Adjust play button position */
+        width: 100px; /* Increase play button width */
+        height: 30px; /* Increase play button height */
+        font-size: 16px; /* Increase play button font size */
+        line-height: 30px; /* Adjust line height accordingly */
+        top: 40px; /* Adjust play button position */
+        left: -10px; /* Adjust play button position */
     }
 }
