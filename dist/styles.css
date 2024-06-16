@@ -608,7 +608,25 @@ footer {
     .play-btn {
         top: 70px; /* Adjusted 80px up from the original 150px */
     }
+
+    /* Slider adjustments for phones */
+    .slider {
+        max-width: 100%; /* Ensure slider does not exceed 100% */
+        height: 300px; /* Decrease the height to make it more like a tabloid shape */
+    }
+
+    .slides {
+        height: 300px; /* Adjust the height to match the slider */
+    }
+
+    .slide {
+        height: 100%; /* Ensure slide takes full height of the slider */
+        object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    }
+
 }
+
+
 
 /* Additional styles for very small screens (e.g., less than 400px) */
 @media (max-width: 400px) {
