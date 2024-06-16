@@ -394,7 +394,8 @@ footer {
         max-width: 300px;
     }
 
-    .card {
+    .card
+    {
         width: 80px;
         height: 80px;
         font-size: 20px;
@@ -585,7 +586,6 @@ footer {
 
 /* Media Query for Tablets in Horizontal Orientation */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
     .video-container {
         width: calc(100% - 4px); /* Ensure container does not exceed 100% */
         margin: 20px auto 0; /* Center align and add margin-top to create a gap */
@@ -599,7 +599,6 @@ footer {
 
 /* Media Query for Tablets in Vertical Orientation */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-
     .video-container {
         width: calc(100% - 4px); /* Ensure container does not exceed 100% */
         margin: 20px auto 0; /* Center align and add margin-top to create a gap */
@@ -607,6 +606,46 @@ footer {
     }
     
     .play-btn {
-        top: 70px; /* Adjusted 80px up from the original 150px */
-    }
+        top: 70px; /* Adjusted 80px up from the original 150px */
+    }
+}
+
+/* Additional styles for very small screens (e.g., less than 400px) */
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.5em; /* Further reduce font size */
+    }
+
+    header p {
+        font-size: 0.8em; /* Further reduce font size */
+    }
+
+    .video-container {
+        width: calc(100% - 4px); /* Ensure container does not exceed 100% */
+        margin: 20px auto 0; /* Center align and add margin-top to create a gap */
+        padding: 0 2px;
+    }
+
+    section {
+        padding: 20px 2px; /* Further reduce padding */
+    }
+
+    form {
+        max-width: 160px; /* Further reduce form width */
+    }
+
+    .card {
+        width: 40px; /* Further reduce card size */
+        height: 40px; /* Further reduce card size */
+        font-size: 12px; /* Further reduce font size */
+    }
+
+    .play-btn {
+        width: 100px; /* Increase play button width */
+        height: 30px; /* Increase play button height */
+        font-size: 16px; /* Increase play button font size */
+        line-height: 30px; /* Adjust line height accordingly */
+        top: 40px; /* Adjust play button position */
+        left: -10px; /* Adjust play button position */
+    }
 }
