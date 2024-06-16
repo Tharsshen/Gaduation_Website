@@ -383,7 +383,7 @@ footer {
     }
 
     .video-container video {
-        margin-left: 0; /*
+        margin-left: 0; /* Reset
         margin: 0; /* Remove margin */
     }
 
@@ -427,7 +427,7 @@ footer {
         width: 80px; /* Adjust width */
         height: 20px; /* Adjust height */
         font-size: 12px; /* Adjust font size */
-        line-height: 20px; /* Adjust line height accordingly */
+        line-height: 20px; /* Adjust line height */
         top: 30px; /* Adjust the vertical position */
         left: -5px; /* Adjust the horizontal position */
     }
@@ -479,11 +479,11 @@ footer {
     }
 
     .play-btn {
-        width: 500px; /* Increase play button width */
-        height: 150px; /* Increase play button height */
-        font-size: 80px; /* Increase play button font size */
-        line-height: 150px; /* Adjust line height accordingly */
-        top: 40px; /* Adjust the vertical position */
-        left: -50px; /* Adjust the horizontal position */
-    }
+        width: 100px; /* Increase play button width */
+        height: 30px; /* Increase play button height */
+        font-size: 16px; /* Increase play button font size */
+        line-height: 30px; /* Adjust line height accordingly */
+        top: 40px; /* Adjust play button position */
+        left: -10px; /* Adjust play button position */
+    }
 }
