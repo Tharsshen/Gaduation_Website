@@ -30,6 +30,10 @@
 
         @media only screen and (max-width: 767px) {
             /* Phones and smaller tablets */
+            body, html {
+                transform: scale(0.8); /* Adjust the scale factor as needed */
+                transform-origin: top left; /* Ensure scaling from the top left */
+            }
             canvas {
                 max-width: 90%;
                 max-height: 90%;
@@ -55,3 +59,4 @@
 
     <script src="./js/canvas.bundle.js"></script>
 </body>
+</html>

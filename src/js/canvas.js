@@ -599,7 +599,7 @@ const jumpControl = createTouchControl('jump-control', '↑');
 
 // Apply common styles initially
 const touchControlStyles = {
-    position: 'fixed',
+    position: 'absolute',
     width: '60px',
     height: '60px',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -622,60 +622,69 @@ function setControlStyles(control, styles) {
 }
 
 // Position controls
-setControlStyles(leftControl, {
-    ...touchControlStyles,
-    bottom: '20px',
-    left: '20px'
-});
+function positionControls() {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-setControlStyles(rightControl, {
-    ...touchControlStyles,
-    bottom: '20px',
-    left: '100px' // Adjusted to be close to rightControl
-});
+    // Adjust positions based on screen size
+    if (screenWidth >= 768) {
+        // Tablet and larger screens
+        setControlStyles(leftControl, {
+            ...touchControlStyles,
+            bottom: '20px',
+            left: '20px'
+        });
 
-setControlStyles(jumpControl, {
-    ...touchControlStyles,
-    bottom: '20px',
-    right: '20px'
-});
+        setControlStyles(rightControl, {
+            ...touchControlStyles,
+            bottom: '20px',
+            left: '100px'
+        });
 
-// Responsive adjustments for smaller screens (e.g., less than 400px wide)
-function adjustControlsForSmallScreens() {
-    if (window.innerWidth <= 400) {
-        const smallScreenStyles = {
-            width: '50px',
-            height: '50px',
-            fontSize: '16px'
-        };
-        setControlStyles(leftControl, { ...touchControlStyles, ...smallScreenStyles });
-        setControlStyles(rightControl, { ...touchControlStyles, ...smallScreenStyles });
-        setControlStyles(jumpControl, { ...touchControlStyles, ...smallScreenStyles });
+        setControlStyles(jumpControl, {
+            ...touchControlStyles,
+            bottom: '20px',
+            right: '20px'
+        });
+    } else {
+        // Smaller screens (phones)
+        const controlSize = screenWidth <= 400 ? '50px' : '60px';
+        const fontSize = screenWidth <= 400 ? '16px' : '18px';
+
+        setControlStyles(leftControl, {
+            ...touchControlStyles,
+            bottom: '5%',
+            left: '5%',
+            width: controlSize,
+            height: controlSize,
+            fontSize: fontSize
+        });
+
+        setControlStyles(rightControl, {
+            ...touchControlStyles,
+            bottom: '5%',
+            left: 'calc(10% + ' + controlSize + ')',
+            width: controlSize,
+            height: controlSize,
+            fontSize: fontSize
+        });
+
+        setControlStyles(jumpControl, {
+            ...touchControlStyles,
+            bottom: '5%',
+            right: '5%',
+            width: controlSize,
+            height: controlSize,
+            fontSize: fontSize
+        });
     }
 }
 
-// Call adjustControlsForSmallScreens initially and on window resize
-adjustControlsForSmallScreens();
-window.addEventListener('resize', adjustControlsForSmallScreens);
+// Call positionControls initially and on window resize
+positionControls();
+window.addEventListener('resize', positionControls);
 
-// Position the controls
-leftControl.style.top = '670px';
-leftControl.style.bottom = '20px';
-leftControl.style.right = '200px';  // Adjusted to be closer to the right
-leftControl.style.left = '370px';
-
-rightControl.style.top = '670px';
-rightControl.style.bottom = '20px';
-rightControl.style.right = '200px';  // Adjusted to be closer to the right
-rightControl.style.left = '570px';
-
-// Adjust jumpControl to be closer to the bottom right
-jumpControl.style.top = '670px';
-jumpControl.style.bottom = '20px'; // Adjusted to be closer to the bottom
-jumpControl.style.right = '10px';  // Adjusted to be closer to the right
-jumpControl.style.left = '1220px';  // Adjusted to be closer to the right
-
-// Add touch event listeners
+// Add touch event listeners (assuming these are defined elsewhere)
 leftControl.addEventListener('touchstart', () => {
     keys.left.pressed = true;
     player.currentSprite = player.sprites.run.left;

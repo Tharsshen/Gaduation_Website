@@ -789,7 +789,7 @@ var rightControl = createTouchControl('right-control', '→');
 var jumpControl = createTouchControl('jump-control', '↑'); // Apply common styles initially
 
 var touchControlStyles = {
-  position: 'fixed',
+  position: 'absolute',
   width: '60px',
   height: '60px',
   backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -811,55 +811,55 @@ function setControlStyles(control, styles) {
 } // Position controls
 
 
-setControlStyles(leftControl, _objectSpread({}, touchControlStyles, {
-  bottom: '20px',
-  left: '20px'
-}));
-setControlStyles(rightControl, _objectSpread({}, touchControlStyles, {
-  bottom: '20px',
-  left: '100px' // Adjusted to be close to rightControl
+function positionControls() {
+  var screenWidth = window.innerWidth;
+  var screenHeight = window.innerHeight; // Adjust positions based on screen size
 
-}));
-setControlStyles(jumpControl, _objectSpread({}, touchControlStyles, {
-  bottom: '20px',
-  right: '20px'
-})); // Responsive adjustments for smaller screens (e.g., less than 400px wide)
-
-function adjustControlsForSmallScreens() {
-  if (window.innerWidth <= 400) {
-    var smallScreenStyles = {
-      width: '50px',
-      height: '50px',
-      fontSize: '16px'
-    };
-    setControlStyles(leftControl, _objectSpread({}, touchControlStyles, {}, smallScreenStyles));
-    setControlStyles(rightControl, _objectSpread({}, touchControlStyles, {}, smallScreenStyles));
-    setControlStyles(jumpControl, _objectSpread({}, touchControlStyles, {}, smallScreenStyles));
+  if (screenWidth >= 768) {
+    // Tablet and larger screens
+    setControlStyles(leftControl, _objectSpread({}, touchControlStyles, {
+      bottom: '20px',
+      left: '20px'
+    }));
+    setControlStyles(rightControl, _objectSpread({}, touchControlStyles, {
+      bottom: '20px',
+      left: '100px'
+    }));
+    setControlStyles(jumpControl, _objectSpread({}, touchControlStyles, {
+      bottom: '20px',
+      right: '20px'
+    }));
+  } else {
+    // Smaller screens (phones)
+    var controlSize = screenWidth <= 400 ? '50px' : '60px';
+    var fontSize = screenWidth <= 400 ? '16px' : '18px';
+    setControlStyles(leftControl, _objectSpread({}, touchControlStyles, {
+      bottom: '5%',
+      left: '5%',
+      width: controlSize,
+      height: controlSize,
+      fontSize: fontSize
+    }));
+    setControlStyles(rightControl, _objectSpread({}, touchControlStyles, {
+      bottom: '5%',
+      left: 'calc(10% + ' + controlSize + ')',
+      width: controlSize,
+      height: controlSize,
+      fontSize: fontSize
+    }));
+    setControlStyles(jumpControl, _objectSpread({}, touchControlStyles, {
+      bottom: '5%',
+      right: '5%',
+      width: controlSize,
+      height: controlSize,
+      fontSize: fontSize
+    }));
   }
-} // Call adjustControlsForSmallScreens initially and on window resize
+} // Call positionControls initially and on window resize
 
 
-adjustControlsForSmallScreens();
-window.addEventListener('resize', adjustControlsForSmallScreens); // Position the controls
-
-leftControl.style.top = '670px';
-leftControl.style.bottom = '20px';
-leftControl.style.right = '200px'; // Adjusted to be closer to the right
-
-leftControl.style.left = '370px';
-rightControl.style.top = '670px';
-rightControl.style.bottom = '20px';
-rightControl.style.right = '200px'; // Adjusted to be closer to the right
-
-rightControl.style.left = '570px'; // Adjust jumpControl to be closer to the bottom right
-
-jumpControl.style.top = '670px';
-jumpControl.style.bottom = '20px'; // Adjusted to be closer to the bottom
-
-jumpControl.style.right = '10px'; // Adjusted to be closer to the right
-
-jumpControl.style.left = '1220px'; // Adjusted to be closer to the right
-// Add touch event listeners
+positionControls();
+window.addEventListener('resize', positionControls); // Add touch event listeners (assuming these are defined elsewhere)
 
 leftControl.addEventListener('touchstart', function () {
   keys.left.pressed = true;
