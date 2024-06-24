@@ -664,19 +664,19 @@ function positionControls() {
         // Tablet and larger screens
         setControlStyles(leftControl, {
             ...touchControlStyles,
-            bottom: '60px', // Move upwards for better visibility
+            bottom: '160px', // Move upwards for better visibility
             left: '20px'
         });
 
         setControlStyles(rightControl, {
             ...touchControlStyles,
-            bottom: '60px', // Move upwards for better visibility
+            bottom: '160px', // Move upwards for better visibility
             left: '100px'
         });
 
         setControlStyles(jumpControl, {
             ...touchControlStyles,
-            bottom: '60px', // Move upwards for better visibility
+            bottom: '160px', // Move upwards for better visibility
             right: '20px'
         });
     } else {
