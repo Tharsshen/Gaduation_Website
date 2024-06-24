@@ -664,19 +664,19 @@ function positionControls() {
         // Tablet and larger screens
         setControlStyles(leftControl, {
             ...touchControlStyles,
-            bottom: '20px',
+            bottom: '60px', // Move upwards for better visibility
             left: '20px'
         });
 
         setControlStyles(rightControl, {
             ...touchControlStyles,
-            bottom: '20px',
+            bottom: '60px', // Move upwards for better visibility
             left: '100px'
         });
 
         setControlStyles(jumpControl, {
             ...touchControlStyles,
-            bottom: '20px',
+            bottom: '60px', // Move upwards for better visibility
             right: '20px'
         });
     } else {
@@ -686,7 +686,7 @@ function positionControls() {
 
         setControlStyles(leftControl, {
             ...touchControlStyles,
-            bottom: '5%',
+            bottom: '10%',
             left: '5%',
             width: controlSize,
             height: controlSize,
@@ -695,7 +695,7 @@ function positionControls() {
 
         setControlStyles(rightControl, {
             ...touchControlStyles,
-            bottom: '5%',
+            bottom: '10%',
             left: 'calc(10% + ' + controlSize + ')',
             width: controlSize,
             height: controlSize,
@@ -704,7 +704,7 @@ function positionControls() {
 
         setControlStyles(jumpControl, {
             ...touchControlStyles,
-            bottom: '5%',
+            bottom: '10%',
             right: '5%',
             width: controlSize,
             height: controlSize,
