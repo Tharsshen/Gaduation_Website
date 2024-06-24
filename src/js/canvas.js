@@ -658,27 +658,49 @@ function setControlStyles(control, styles) {
 function positionControls() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
+    const isLandscape = screenWidth > screenHeight;
 
-    // Adjust positions based on screen size
+    // Adjust positions based on screen size and orientation
     if (screenWidth >= 768) {
-        // Tablet and larger screens
-        setControlStyles(leftControl, {
-            ...touchControlStyles,
-            bottom: '160px', // Move upwards for better visibility
-            left: '20px'
-        });
+        if (isLandscape) {
+            // Tablet in landscape mode
+            setControlStyles(leftControl, {
+                ...touchControlStyles,
+                bottom: '80px', // Move upwards more for landscape
+                left: '20px'
+            });
 
-        setControlStyles(rightControl, {
-            ...touchControlStyles,
-            bottom: '160px', // Move upwards for better visibility
-            left: '100px'
-        });
+            setControlStyles(rightControl, {
+                ...touchControlStyles,
+                bottom: '80px', // Move upwards more for landscape
+                left: '100px'
+            });
 
-        setControlStyles(jumpControl, {
-            ...touchControlStyles,
-            bottom: '160px', // Move upwards for better visibility
-            right: '20px'
-        });
+            setControlStyles(jumpControl, {
+                ...touchControlStyles,
+                bottom: '80px', // Move upwards more for landscape
+                right: '20px'
+            });
+        } else {
+            // Tablet in portrait mode
+            setControlStyles(leftControl, {
+                ...touchControlStyles,
+                bottom: '60px', // Move upwards for better visibility
+                left: '20px'
+            });
+
+            setControlStyles(rightControl, {
+                ...touchControlStyles,
+                bottom: '60px', // Move upwards for better visibility
+                left: '100px'
+            });
+
+            setControlStyles(jumpControl, {
+                ...touchControlStyles,
+                bottom: '60px', // Move upwards for better visibility
+                right: '20px'
+            });
+        }
     } else {
         // Smaller screens (phones)
         const controlSize = screenWidth <= 400 ? '50px' : '60px';
