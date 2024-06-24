@@ -11,7 +11,6 @@ import spriteJumpLeft from '../img/YogenJumpLeftNew.png';
 import spriteJumpRight from '../img/YogenJumpRightNew.png';  
 
 import hat from '../img/hat.png';
-
 import leftArrowImage from '../img/leftArrow.png';
 import rightArrowImage from '../img/rightArrow.png';
 import jumpImage from '../img/upArrow.png';
@@ -658,30 +657,27 @@ function setControlStyles(control, styles) {
 function positionControls() {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    const isLandscape = screenWidth > screenHeight;
 
-    // Adjust positions based on screen size and orientation
+    // Adjust positions based on screen size
     if (screenWidth >= 768) {
-        if (isLandscape) {
-            // Tablet in landscape mode
-            setControlStyles(leftControl, {
-                ...touchControlStyles,
-                bottom: '180px', // Move upwards more for landscape
-                left: '20px'
-            });
+        // Tablet and larger screens
+        setControlStyles(leftControl, {
+            ...touchControlStyles,
+            bottom: '20px',
+            left: '20px'
+        });
 
-            setControlStyles(rightControl, {
-                ...touchControlStyles,
-                bottom: '180px', // Move upwards more for landscape
-                left: '100px'
-            });
+        setControlStyles(rightControl, {
+            ...touchControlStyles,
+            bottom: '20px',
+            left: '100px'
+        });
 
-            setControlStyles(jumpControl, {
-                ...touchControlStyles,
-                bottom: '180px', // Move upwards more for landscape
-                right: '20px'
-            });
-        } 
+        setControlStyles(jumpControl, {
+            ...touchControlStyles,
+            bottom: '20px',
+            right: '20px'
+        });
     } else {
         // Smaller screens (phones)
         const controlSize = screenWidth <= 400 ? '50px' : '60px';
@@ -689,7 +685,7 @@ function positionControls() {
 
         setControlStyles(leftControl, {
             ...touchControlStyles,
-            bottom: '10%',
+            bottom: '5%',
             left: '5%',
             width: controlSize,
             height: controlSize,
@@ -698,8 +694,8 @@ function positionControls() {
 
         setControlStyles(rightControl, {
             ...touchControlStyles,
-            bottom: '10%',
-            left: 'calc(10% + ' + controlSize + ')',
+            bottom: '5%',
+            left: `calc(10% + ${controlSize})`,
             width: controlSize,
             height: controlSize,
             fontSize: fontSize
@@ -707,23 +703,12 @@ function positionControls() {
 
         setControlStyles(jumpControl, {
             ...touchControlStyles,
-            bottom: '10%',
+            bottom: '5%',
             right: '5%',
             width: controlSize,
             height: controlSize,
             fontSize: fontSize
         });
-    }
-
-    // Show or hide controls based on screen width
-    if (screenWidth > 1024) {
-        leftControl.style.display = 'none';
-        rightControl.style.display = 'none';
-        jumpControl.style.display = 'none';
-    } else {
-        leftControl.style.display = 'flex';
-        rightControl.style.display = 'flex';
-        jumpControl.style.display = 'flex';
     }
 }
 
