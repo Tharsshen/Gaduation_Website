@@ -666,19 +666,19 @@ function positionControls() {
             // Tablet in landscape mode
             setControlStyles(leftControl, {
                 ...touchControlStyles,
-                bottom: '180px', // Move upwards more for landscape
+                bottom: '110px', // Move upwards more for landscape
                 left: '20px'
             });
 
             setControlStyles(rightControl, {
                 ...touchControlStyles,
-                bottom: '180px', // Move upwards more for landscape
+                bottom: '110px', // Move upwards more for landscape
                 left: '100px'
             });
 
             setControlStyles(jumpControl, {
                 ...touchControlStyles,
-                bottom: '180px', // Move upwards more for landscape
+                bottom: '110px', // Move upwards more for landscape
                 right: '20px'
             });
         } else {
